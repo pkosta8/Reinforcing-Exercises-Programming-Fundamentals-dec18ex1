@@ -1,3 +1,5 @@
+#like pizza slices example
+
 project = {
   committee: ["Stella", "Salma", "Kai"],
   title: "Very Important Project",
@@ -33,3 +35,15 @@ project = {
     }
   ]
 }
+
+project[:steps].each do |step|
+step[:person] = project[:committee].first
+project[:committee].rotate!
+end
+puts
+
+puts "after steps assigned"
+project[:steps].each do |step|
+puts "#{step[:person]} assigned #{step[:description]}"
+end
+end
